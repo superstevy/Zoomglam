@@ -9,7 +9,13 @@ body {
   width: fit-content;
 }
 
-header {
+/* header {
+  background-image: url('./img/william-krause-U8Yn1zkefVs-unsplash.png');
+  background-repeat: no-repeat;
+  background-size: cover;  
+} */
+
+.homeHeader {
   background-image: url('./img/william-krause-U8Yn1zkefVs-unsplash.png');
   background-repeat: no-repeat;
   background-size: cover;  
@@ -565,10 +571,15 @@ Mobile device
       background-color: white;
   }
 
-  header {
+  /* header {
       height: 1900px;
       background-position: -819px;
-  }
+  } */
+
+  .homeHeader {
+    height: 1900px;
+    background-position: -819px;
+}
 
   /* .navbar {
       width: 1200px;

@@ -1,12 +1,10 @@
 import React from 'react'
 
-import ImgSearch from '../../assets/img/icons8-search-500.svg'
-
 export default function Header () {
   return (
     <div>
       <header>
-        <section className='navbar'>
+        <section className='navbar header'>
           <div className='container'>
             <nav className='zoom'>
               <b>Z</b>oomglam
@@ -37,17 +35,6 @@ export default function Header () {
               <input type='submit' value='Sunset' />
               <input type='submit' value='Red Background' />
             </nav>
-          </div>
-        </section>
-        <section className='searchbar'>
-          <div className='container'>
-            <div className='instruct'>
-              <p>Find your zoom <span>background</span></p>
-            </div>
-            <div className='search'>
-              <input type='search' placeholder='Type here...' />
-              <img src={ImgSearch} alt='search icon' />
-            </div>
           </div>
         </section>
       </header>

@@ -15,6 +15,7 @@ import Img9 from '../assets/img/alesia-kazantceva-VWcPlbHglYc-unsplash.png'
 import Img10 from '../assets/img/kara-eads-L7EwHkq1B2s-unsplash.png'
 import Img11 from '../assets/img/david-fintz-z-Jaxjj0KVY-unsplash.png'
 import Img12 from '../assets/img/cowomen-1hlFqUdFv1s-unsplash.png'
+import ImgSearch from '../assets/img/icons8-search-500.svg'
 
 import Header from '../components/Common/Header'
 import Footer from '../components/Common/Footer'
@@ -30,8 +31,22 @@ const Home = () => {
 
   return (
     <>
+      <div className='homeHeader'>
 
-      <Header />
+        <Header />
+
+        <section className='searchbar'>
+          <div className='container'>
+            <div className='instruct'>
+              <p>Find your zoom <span>background</span></p>
+            </div>
+            <div className='search'>
+              <input type='search' placeholder='Type here...' />
+              <img src={ImgSearch} alt='search icon' />
+            </div>
+          </div>
+        </section>
+      </div>
 
       <div className='library'>
         <main className='grid-container'>
