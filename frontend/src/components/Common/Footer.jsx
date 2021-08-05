@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer () {
   return (
-    <div className='library result favorite'>
+    <div>
       <footer className='more'>
         <input type='submit' value='Show more' />
         <hr />

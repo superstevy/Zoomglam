@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background-image: url('Assets/william-krause-U8Yn1zkefVs-unsplash.png');
+  background-image: url('./img/william-krause-U8Yn1zkefVs-unsplash.png');
   background-repeat: no-repeat;
   background-size: cover;  
 }
@@ -570,9 +570,9 @@ Mobile device
       background-position: -819px;
   }
 
-  .navbar {
-      width: 100%;
-  }
+  /* .navbar {
+      width: 1200px;
+  } */
 
   .navbar .container{
       margin-bottom: 30px;

@@ -16,6 +16,9 @@ import Img10 from '../assets/img/kara-eads-L7EwHkq1B2s-unsplash.png'
 import Img11 from '../assets/img/david-fintz-z-Jaxjj0KVY-unsplash.png'
 import Img12 from '../assets/img/cowomen-1hlFqUdFv1s-unsplash.png'
 
+import Header from '../components/Common/Header'
+import Footer from '../components/Common/Footer'
+
 const Home = () => {
   const dispatch = useDispatch()
   const selector = useSelector((state) => state)
@@ -26,30 +29,40 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='library'>
-      <main className='grid-container'>
-        <ul>
-          <li><img src={Img1} alt='#' /></li>
-          <li><img src={Img2} alt='#' /></li>
-          <li><img src={Img3} alt='#' /></li>
-          <li><img src={Img4} alt='#' /></li>
-          <li><img src={Img5} alt='#' /></li>
-          <li> <img src={Img6} alt='#' /></li>
-          <li> <img src={Img7} alt='#' /></li>
-          <li><img src={Img8} alt='#' /></li>
-          <li> <img src={Img9} alt='#' /></li>
-          <li> <img src={Img10} alt='#' /></li>
-          <li><img src={Img11} alt='#' /></li>
-          <li><img src={Img12} alt='#' /></li>
-          <li><img src={Img4} alt='#' /></li>
-          <li> <img src={Img5} alt='#' /></li>
-          <li><img src={Img6} alt='#' /></li>
-          <li> <img src={Img7} alt='#' /></li>
-          <li><img src={Img8} alt='#' /></li>
-          <li><img src={Img9} alt='#' /></li>
-        </ul>
-      </main>
-    </div>
+    <>
+
+      <Header />
+
+      <div className='library'>
+        <main className='grid-container'>
+          <ul>
+            <li><img src={Img1} alt='#' /></li>
+            <li><img src={Img2} alt='#' /></li>
+            <li><img src={Img3} alt='#' /></li>
+            <li><img src={Img4} alt='#' /></li>
+            <li><img src={Img5} alt='#' /></li>
+            <li> <img src={Img6} alt='#' /></li>
+            <li> <img src={Img7} alt='#' /></li>
+            <li><img src={Img8} alt='#' /></li>
+            <li> <img src={Img9} alt='#' /></li>
+            <li> <img src={Img10} alt='#' /></li>
+            <li><img src={Img11} alt='#' /></li>
+            <li><img src={Img12} alt='#' /></li>
+            <li><img src={Img4} alt='#' /></li>
+            <li> <img src={Img5} alt='#' /></li>
+            <li><img src={Img6} alt='#' /></li>
+            <li> <img src={Img7} alt='#' /></li>
+            <li><img src={Img8} alt='#' /></li>
+            <li><img src={Img9} alt='#' /></li>
+          </ul>
+        </main>
+
+        <Footer />
+
+      </div>
+
+    </>
+
   )
 }
 
