@@ -1,11 +1,17 @@
 import React from 'react'
 import Router from './Router'
-import "./assets/style.css"
+import './assets/style.css'
+import Header from './components/Common/Header'
+import Footer from './components/Common/Footer'
 
-function App() {
+function App () {
   return (
-    <Router />
-  );
+    <>
+      <Header />
+      <Router />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
