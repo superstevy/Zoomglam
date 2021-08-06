@@ -9,16 +9,40 @@ body {
   width: fit-content;
 }
 
-/* header {
-  background-image: url('./img/william-krause-U8Yn1zkefVs-unsplash.png');
-  background-repeat: no-repeat;
-  background-size: cover;  
-} */
-
 .homeHeader {
   background-image: url('./img/william-krause-U8Yn1zkefVs-unsplash.png');
   background-repeat: no-repeat;
   background-size: cover;  
+}
+
+/*
+footer
+****************************************************************************************/
+
+.more {
+  background-color: white;
+}
+
+.more input {
+  background-color: white;
+  margin: auto 28em;
+  width: 10em;
+  padding: 10px 30px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: #707070;
+  font-size: 18px;
+}
+
+.more hr {
+  margin: 140px 5px 15px;
+}
+
+.more .zoom {
+  font-size: 19px;
+  color: #707070;
+  padding-bottom: 10px;
+  margin-left: 15px;
 }
 
 
@@ -147,7 +171,6 @@ body {
   background-color: white;
   margin: 0 auto;
   max-width: 1200px;
-  border: 1px solid rgb(214, 214, 214);
   padding: 100px 0 5px;
 }
 
@@ -158,32 +181,6 @@ body {
   padding: 10px 30px;
   margin-bottom: 150px;
   list-style-type: none; 
-}
-
-.library .more {
-  margin: auto 30px;
-}
-
-.library .more input {
-  background-color: white;
-  margin: auto 28em;
-  width: 10em;
-  padding: 10px 30px;
-  border: 1px solid gray;
-  border-radius: 20px;
-  color: #707070;
-  font-size: 18px;
-}
-
-.library .more hr {
-  margin-top: 140px;
-}
-
-.library .more .zoom {
-  font-size: 19px;
-  color: #707070;
-  padding-bottom: 10px;
-  margin-left: 15px;
 }
 
 
@@ -208,7 +205,6 @@ search.html
   background-color: white;
   margin: 0 auto;
   max-width: 1200px;
-  border: 1px solid rgb(214, 214, 214);
   padding: 20px 0px;
 }
 
@@ -444,7 +440,6 @@ favorite.html
   background-color: white;
   margin: 0 auto;
   max-width: 1200px;
-  border: 1px solid rgb(214, 214, 214);
   padding: 20px 0px;
 }
 

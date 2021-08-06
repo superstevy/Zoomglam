@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchPosts } from '../reducks/posts/operations'
-import { getPosts } from '../reducks/posts/selectors'
+import React from 'react'
 
 import Img1 from '../assets/img/mark-chaves-MiDPt7D4WN8-unsplash.png'
 import Img2 from '../assets/img/johnson-wang-iI4sR_nkkbc-unsplash.png'
@@ -17,23 +14,10 @@ import Img11 from '../assets/img/david-fintz-z-Jaxjj0KVY-unsplash.png'
 import Img12 from '../assets/img/cowomen-1hlFqUdFv1s-unsplash.png'
 import ImgSearch from '../assets/img/icons8-search-500.svg'
 
-import Header from '../components/Common/Header'
-import Footer from '../components/Common/Footer'
-
-const Home = () => {
-  const dispatch = useDispatch()
-  const selector = useSelector((state) => state)
-  const posts = getPosts(selector)
-
-  useEffect(() => {
-    dispatch(fetchPosts())
-  }, [])
-
+export default function Home () {
   return (
     <>
       <div className='homeHeader'>
-
-        <Header />
 
         <section className='searchbar'>
           <div className='container'>
@@ -49,7 +33,7 @@ const Home = () => {
       </div>
 
       <div className='library'>
-        <main className='grid-container'>
+        <section className='grid-container'>
           <ul>
             <li><img src={Img1} alt='#' /></li>
             <li><img src={Img2} alt='#' /></li>
@@ -70,15 +54,9 @@ const Home = () => {
             <li><img src={Img8} alt='#' /></li>
             <li><img src={Img9} alt='#' /></li>
           </ul>
-        </main>
-
-        <Footer />
+        </section>
 
       </div>
-
     </>
-
   )
 }
-
-export default Home

@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Header from '../components/Common/Header'
-import Footer from '../components/Common/Footer'
-
 import ImgSearch from '../assets/img/icons8-search-500.svg'
 import Img1 from '../assets/img/samantha-gades-BlIhVfXbi9s-unsplash.png'
 import Img2 from '../assets/img/nastuh-abootalebi-eHD-1.png'
@@ -12,8 +9,6 @@ import Img4 from '../assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.png'
 export default function Favorites () {
   return (
     <div id='favorite'>
-
-      <Header />
 
       <div className='favorite'>
         <div className='container'>
@@ -55,8 +50,6 @@ export default function Favorites () {
             </li>
           </ul>
         </main>
-
-        <Footer />
 
       </div>
     </div>

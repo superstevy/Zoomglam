@@ -14,14 +14,9 @@ import Img10 from '../assets/img/laura-davidson-QBAH4IldaZY-unsplash.png'
 import Img11 from '../assets/img/samantha-gades-BlIhVfXbi9s-unsplash.png'
 import Img12 from '../assets/img/alesia-kazantceva-VWcPlbHglYc-unsplash.png'
 
-import Footer from '../components/Common/Footer'
-import Header from '../components/Common/Header'
-
 export default function Search () {
   return (
     <div>
-
-      <Header />
 
       <div className='result'>
         <div className='container'>
@@ -60,8 +55,6 @@ export default function Search () {
             <li><img src={Img9} alt='#' /></li>
           </ul>
         </main>
-
-        <Footer />
 
       </div>
 

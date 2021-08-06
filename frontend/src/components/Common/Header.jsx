@@ -4,7 +4,7 @@ export default function Header () {
   return (
     <div>
       <header>
-        <section className='navbar header'>
+        <section className='navbar'>
           <div className='container'>
             <nav className='zoom'>
               <b>Z</b>oomglam
