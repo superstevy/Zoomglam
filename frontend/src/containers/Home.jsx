@@ -18,7 +18,6 @@ export default function Home () {
   return (
     <>
       <div className='homeHeader'>
-
         <section className='searchbar'>
           <div className='container'>
             <div className='instruct'>

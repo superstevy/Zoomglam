@@ -2,22 +2,67 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
-class Post(models.Model):
+class Images (models.Model):
     class Meta(object):
-        db_table = 'post'
+        db_table = 'image'
 
-    name = models.CharField(
-        'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'
+    id = models.AutoField(
+        primary_key=True
     )
-    body = models.CharField(
-        'Body', blank=False, null=False, max_length=140, db_index=True
+    title = models.CharField(
+        'Title', blank=True, null=True, max_length=255, db_index=True, default='Anonymous'
     )
-    image = CloudinaryField(
-        'image', blank=True, null=True
+    image = models.ManyToManyField(
+        'Tags', through='Image_tag', blank=True
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=True, auto_now_add=True
     )
-    updated_at = models.DateTimeField(
-        'Updated Datetime', blank=True, auto_now=True
+
+
+class Tags (models.Model):
+    class Meta(object):
+        db_table = 'tag'
+
+    id = models.AutoField(
+        primary_key=True
     )
+    name = models.CharField(
+        'Name', blank=True, null=False, max_length=140, db_index=True, default='Anonymous'
+    )
+    tag = models.ManyToManyField(
+        'Images', through='Image_tag', blank=True
+    )
+
+
+class Image_tag (models.Model):
+    class Meta(object):
+        db_table = 'image_tag'
+
+    image = models.ForeignKey(
+        Images, on_delete=models.CASCADE
+    )
+    tag = models.ForeignKey(
+        Tags, on_delete=models.CASCADE
+    )
+
+
+# class Post(models.Model):
+#     class Meta(object):
+#         db_table = 'post'
+
+#     name = models.CharField(
+#         'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'
+#     )
+#     body = models.CharField(
+#         'Body', blank=False, null=False, max_length=140, db_index=True
+#     )
+#     image = CloudinaryField(
+#         'image', blank=True, null=True
+#     )
+#     created_at = models.DateTimeField(
+#         'Created Datetime', blank=True, auto_now_add=True
+#     )
+#     updated_at = models.DateTimeField(
+#         'Updated Datetime', blank=True, auto_now=True
+#     )

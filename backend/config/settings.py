@@ -31,7 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'forum-prod-api.herokuapp.com']
 CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://forum-prod-frontend.herokuapp.com']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
+                        'http://127.0.0.1:3000', 'https://forum-prod-frontend.herokuapp.com']
 
 # Application definition
 
@@ -155,9 +156,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 cloudinary.config(
-    cloud_name="techis",
-    api_key="886187759951178",
-    api_secret="WGcWrWfkPlxdOCdlFaLTdjSNtfo",
+    cloud_name="dxct8rh7c",
+    api_key="211453584171844",
+    api_secret="RJj5Er47QjQ33yDV_9Pig2NNnjs",
     secure=True
 )
 
