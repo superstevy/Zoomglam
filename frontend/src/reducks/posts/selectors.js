@@ -1,8 +1,8 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect'
 
-const postsSelector = (state) => state.posts;
+const imagesSelector = (state) => state.images
 
-export const getPosts = createSelector(
-    [postsSelector],
-    state => state.list
-);
+export const getImages = createSelector(
+  [imagesSelector],
+  state => state.list
+)

@@ -1,7 +1,7 @@
-const initialState = { 
-    posts: {
-        list: []
-    }
-};
+const initialState = {
+  images: {
+    list: []
+  }
+}
 
 export default initialState

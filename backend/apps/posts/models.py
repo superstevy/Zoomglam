@@ -9,11 +9,11 @@ class Images (models.Model):
     id = models.AutoField(
         primary_key=True
     )
-    title = models.CharField(
-        'Title', blank=True, null=True, max_length=255, db_index=True, default='Anonymous'
+    name = models.ManyToManyField(
+        'Tags', through='Image_tag', blank=True, db_index=True, default='Anonymous'
     )
-    image = models.ManyToManyField(
-        'Tags', through='Image_tag', blank=True
+    image = CloudinaryField(
+        'image', blank=True, null=True
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=True, auto_now_add=True
@@ -26,9 +26,6 @@ class Tags (models.Model):
 
     id = models.AutoField(
         primary_key=True
-    )
-    name = models.CharField(
-        'Name', blank=True, null=False, max_length=140, db_index=True, default='Anonymous'
     )
     tag = models.ManyToManyField(
         'Images', through='Image_tag', blank=True
