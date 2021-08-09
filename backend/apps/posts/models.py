@@ -2,45 +2,30 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
-class Images (models.Model):
-    class Meta(object):
-        db_table = 'image'
-
-    id = models.AutoField(
-        primary_key=True
-    )
-    name = models.ManyToManyField(
-        'Tags', through='Image_tag', blank=True, db_index=True, default='Anonymous'
-    )
-    image = CloudinaryField(
-        'image', blank=True, null=True
-    )
-    created_at = models.DateTimeField(
-        'Created Datetime', blank=True, auto_now_add=True
-    )
-
-
-class Tags (models.Model):
+class Tag(models.Model):
     class Meta(object):
         db_table = 'tag'
 
     id = models.AutoField(
         primary_key=True
     )
-    tag = models.ManyToManyField(
-        'Images', through='Image_tag', blank=True
-    )
 
 
-class Image_tag (models.Model):
+class Image(models.Model):
     class Meta(object):
-        db_table = 'image_tag'
+        db_table = 'image'
 
-    image = models.ForeignKey(
-        Images, on_delete=models.CASCADE
+    id = models.AutoField(
+        primary_key=True
     )
-    tag = models.ForeignKey(
-        Tags, on_delete=models.CASCADE
+    tag = models.ManyToManyField(
+        Tag
+    )
+    image = CloudinaryField(
+        'image', blank=True, null=True
+    )
+    created_at = models.DateTimeField(
+        'Created Datetime', blank=True, auto_now_add=True
     )
 
 
