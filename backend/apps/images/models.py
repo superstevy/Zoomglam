@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 class Tag(models.Model):
     class Meta(object):
-        db_table = 'tag'
+        db_table = 'tags'
 
     name = models.CharField(
         max_length=50, unique=True, blank=False
