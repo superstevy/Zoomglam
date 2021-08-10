@@ -2,7 +2,7 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
-class Tag (models.Model):
+class Tag(models.Model):
     class Meta(object):
         db_table = 'tag'
 
@@ -15,6 +15,9 @@ class Tag (models.Model):
     updated_at = models.DateTimeField(
         'Updated Datetime', blank=True, auto_now=True
     )
+
+    def __str__(self):
+        return self.name
 
 
 class Image(models.Model):
@@ -39,3 +42,6 @@ class Image(models.Model):
     tag = models.ManyToManyField(
         Tag
     )
+
+    def __str__(self):
+        return self.name
