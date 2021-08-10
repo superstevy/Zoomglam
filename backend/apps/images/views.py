@@ -6,7 +6,7 @@ from .models import *
 
 
 class ImageList(generics.ListAPIView):
-    # Get all images, limit = 20
+    # Get all images
     queryset = Image.objects.order_by('created_at')
     serializer_class = ImageSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
@@ -15,7 +15,7 @@ class ImageList(generics.ListAPIView):
 
 
 class TagList(generics.ListAPIView):
-    # Get all tags, limit = 20
+    # Get all tags
     queryset = Tag.objects.order_by('created_at')
     serializer_class = TagSerializer
 
