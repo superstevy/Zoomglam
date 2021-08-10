@@ -39,7 +39,7 @@ class Image(models.Model):
     updated_at = models.DateTimeField(
         'Updated Datetime', blank=True, auto_now=True
     )
-    tag = models.ManyToManyField(
+    tags = models.ManyToManyField(
         Tag
     )
 
