@@ -7,7 +7,7 @@ import {
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
 
-import { ImagesReducer } from '../posts/reducers'
+import { ImagesReducer } from '../images/reducers'
 
 export default function createStore (history) {
   return reduxCreateStore(

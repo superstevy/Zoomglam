@@ -17,7 +17,7 @@ const api = axios.create({
 export default class API {
     getImages = async () => {
         const images = await api
-            .get("/image_list/")
+            .get("/images/")
             .then((response) => {
                 return response.data
             })
@@ -26,6 +26,31 @@ export default class API {
             })
         return images
     }
+
+    getImageDetail = async (id) => {
+        const imageDetail = await api
+            .get("/images/<int:pk>/" + id + "/")
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => {
+                throw new Error(error)
+            })
+        return imageDetail
+    }
+
+    getTags = async () => {
+        const tagList = await api
+            .get("/tags/")
+            .then((response) => {
+                return response.data
+            })
+            .catch((error) => {
+                throw new Error(error)
+            })
+        return tagList
+    }
+
     // addPost = async (name, body, image) => {
     //     const formData = new FormData();
     //     formData.append("name", name);

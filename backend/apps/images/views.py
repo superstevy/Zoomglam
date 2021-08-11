@@ -20,7 +20,7 @@ class TagList(generics.ListAPIView):
     serializer_class = TagSerializer
 
 
-class ImageDetail(generics.RetrieveAPIView):
+class ImageDetail(generics.RetrieveAPIView, generics.UpdateAPIView):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
 
