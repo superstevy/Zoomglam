@@ -14,22 +14,24 @@ const api = axios.create({
   },
 });
 
+
+
 export default class API {
     getImages = async () => {
+    
         const images = await api
-            .get("/images/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return images
-    }
-
+          .get("/images/")
+          .then((response) => {
+            return response.data;
+          })
+          .catch((error) => {
+            throw new Error(error);
+          });
+        return images;
+      }
     getImageDetail = async (id) => {
         const imageDetail = await api
-            .get("/images/<int:pk>/" + id + "/")
+            .get("/images/" + id + "/")
             .then((response) => {
                 return response.data
             })

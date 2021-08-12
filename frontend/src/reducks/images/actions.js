@@ -5,10 +5,3 @@ export const fetchImageAction = (images) => {
     payload: images
   }
 }
-export const DELETE_IMAGE = 'DELETE_IMAGE'
-export const deleteImageAction = (images) => {
-  return {
-    type: 'DELETE_IMAGE',
-    payload: images
-  }
-}

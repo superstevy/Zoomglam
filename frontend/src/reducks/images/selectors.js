@@ -4,5 +4,5 @@ const imagesSelector = (state) => state.images
 
 export const getImages = createSelector(
   [imagesSelector],
-  state => state.list
+  (state) => state.list
 )

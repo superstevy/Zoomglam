@@ -30,7 +30,8 @@ const Post = ({ post }) => {
           </a>
         )}
       </div>
-    </li>
+
+      </li>
   );
 };
 

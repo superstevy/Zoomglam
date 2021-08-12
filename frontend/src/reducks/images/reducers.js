@@ -8,11 +8,6 @@ export const ImagesReducer = (state = initialState.images, action) => {
         ...state,
         list: action.payload
       }
-    case Actions.DELETE_IMAGE:
-      return {
-        ...state,
-        list: action.payload
-      }
     default:
       return state
   }
