@@ -18,8 +18,7 @@ const api = axios.create({
 
 export default class API {
     getImages = async () => {
-    
-        const images = await api
+      const images = await api
           .get("/images/")
           .then((response) => {
             return response.data;
