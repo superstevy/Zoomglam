@@ -36,9 +36,11 @@ export default function Home() {
           <ul>
             {images &&
               images.map((image) => {
-                <li key={image.id}>
-                  <img src={image.image} />
-                </li>;
+                return (
+                  <li key={image.id}>
+                    <img src={image.image} />
+                  </li>
+                );
               })}
           </ul>
         </section>

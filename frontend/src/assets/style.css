@@ -198,6 +198,11 @@ footer
   list-style-type: none;
 }
 
+.library .grid-container ul li img {
+  width: 350px;
+  height: 234px;
+}
+
 /***************************************************************************************************
 search.html 
 *****************************************************************************************************/
@@ -698,10 +703,11 @@ Mobile device
 
   .library .grid-container ul {
     grid-template-columns: auto auto;
+    margin: 60px 28px;
   }
 
   .library .grid-container ul li img {
-    width: 100%;
+    width: 500px;
   }
 
   /*
