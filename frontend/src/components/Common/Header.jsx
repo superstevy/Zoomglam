@@ -1,43 +1,41 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function Header () {
+import { getTags } from "../../reducks/tags/selectors.js";
+import { fetchTags } from "../../reducks/tags/operations";
+
+export default function Header() {
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const tags = getTags(selector);
+
+  useEffect(() => {
+    dispatch(fetchTags());
+  }, []);
+
   return (
     <div>
       <header>
-        <section className='navbar'>
-          <div className='container'>
-            <nav className='zoom'>
+        <section className="navbar">
+          <div className="container">
+            <nav className="zoom">
               <b>Z</b>oomglam
             </nav>
-            <nav className='navigation'>
+            <nav className="navigation">
               <hr />
-              <input type='button' value='Favorites' />
+              <input type="button" value="Favorites" />
             </nav>
           </div>
-          <div className='tags'>
+          <div className="tags">
             <nav>
-              <input type='submit' value='Orange Background' />
-              <input type='submit' value='Black Background' />
-              <input type='submit' value='Texture Background' />
-              <input type='submit' value='Office' />
-              <input type='submit' value='Meeting' />
-              <input type='submit' value='Casual' />
-              <input type='submit' value='Forest' />
-              <input type='submit' value='Book' />
-              <input type='submit' value='Ocean' />
-              <input type='submit' value='House' />
-              <input type='submit' value='Car' />
-              <input type='submit' value='Sunrise' />
-              <input type='submit' value='Coffee' />
-              <input type='submit' value='Space' />
-              <input type='submit' value='Tech' />
-              <input type='submit' value='Room' />
-              <input type='submit' value='Sunset' />
-              <input type='submit' value='Red Background' />
+              {tags &&
+                tags.map((tag) => {
+                  return <input type="submit" key={tag.id} value={tag.name} />;
+                })}
             </nav>
           </div>
         </section>
       </header>
     </div>
-  )
+  );
 }

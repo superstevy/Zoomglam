@@ -1,7 +1,10 @@
 const initialState = {
   images: {
-    list: []
-  }
-}
+    list: [],
+  },
+  tags: {
+    list: [],
+  },
+};
 
-export default initialState
+export default initialState;
