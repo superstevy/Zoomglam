@@ -18,9 +18,10 @@ const api = axios.create({
 });
 
 export default class API {
-  getImages = async () => {
+  getImages = async (page) => {
+    let url = `/images/?page=${page}`;
     const images = await api
-      .get("/images/")
+      .get(url)
       .then((response) => {
         return response.data;
       })
