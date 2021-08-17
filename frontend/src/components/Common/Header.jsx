@@ -30,7 +30,7 @@ export default function Header() {
             <nav>
               {tags &&
                 tags.map((tag) => {
-                  return <input type="submit" key={tag.id} value={tag.name} />;
+                  <input type="submit" key={tag.id} value={tag.name} />;
                 })}
             </nav>
           </div>
