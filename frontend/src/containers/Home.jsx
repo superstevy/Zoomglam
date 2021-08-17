@@ -48,13 +48,11 @@ export default function Home() {
         <section className="grid-container">
           <ul>
             {images &&
-              images.map((image) => {
-                return (
-                  <li key={image.id} onClick={() => clickImage(image.id)}>
-                    <img src={image.image} alt={image.name} />
-                  </li>
-                );
-              })}
+              images.map((image) => (
+                <li key={image.id} onClick={() => clickImage(image.id)}>
+                  <img src={image.image} alt={image.name} />
+                </li>
+              ))}
           </ul>
         </section>
       </div>

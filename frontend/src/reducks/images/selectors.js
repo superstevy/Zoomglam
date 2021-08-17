@@ -1,7 +1,6 @@
 import { createSelector } from "reselect";
 
 const imagesSelector = (state) => state.images;
-const pagesSelector = (state) => state.images;
 
 export const getImages = createSelector(
   [imagesSelector],
@@ -9,6 +8,6 @@ export const getImages = createSelector(
 );
 
 export const getHasNext = createSelector(
-  [pagesSelector],
+  [imagesSelector],
   (state) => state.hasNext
 );

@@ -29,9 +29,9 @@ export default function Header() {
           <div className="tags">
             <nav>
               {tags &&
-                tags.map((tag) => {
-                  return <input type="submit" key={tag.id} value={tag.name} />;
-                })}
+                tags.map((tag) => (
+                  <input type="submit" key={tag.id} value={tag.name} />
+                ))}
             </nav>
           </div>
         </section>
