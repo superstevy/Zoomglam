@@ -18,9 +18,12 @@ export default function Header() {
       <header>
         <section className="navbar">
           <div className="container">
-            <nav className="zoom">
-              <b>Z</b>oomglam
-            </nav>
+            <a href="/" className="home-link">
+              <nav className="zoom">
+                <b>Z</b>oomglam
+              </nav>
+            </a>
+
             <nav className="navigation">
               <hr />
               <input type="button" value="Favorites" />

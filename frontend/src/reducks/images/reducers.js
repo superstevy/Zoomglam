@@ -6,7 +6,8 @@ export const ImagesReducer = (state = initialState.images, action) => {
     case Actions.FETCH_IMAGE:
       return {
         ...state,
-        list: action.payload,
+        list: action.list,
+        hasNext: action.hasNext,
       };
     default:
       return state;

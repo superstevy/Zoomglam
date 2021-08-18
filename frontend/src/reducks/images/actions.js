@@ -1,7 +1,8 @@
 export const FETCH_IMAGE = "FETCH_IMAGE";
-export const fetchImageAction = (images) => {
+export const fetchImageAction = (images, hasNext) => {
   return {
     type: "FETCH_IMAGE",
-    payload: images,
+    list: images,
+    hasNext: hasNext,
   };
 };

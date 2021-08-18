@@ -15,6 +15,11 @@ body {
   background-size: cover;
 }
 
+img {
+  width: 350px;
+  height: 234px;
+}
+
 /*
 footer
 ****************************************************************************************/
@@ -58,7 +63,6 @@ footer
 ******************************************************************************************************/
 
 .navbar {
-  /* background-color: white; */
   width: 1200px;
   color: #707070;
 }
@@ -74,8 +78,14 @@ footer
   border-bottom: 1px solid #80808026;
 }
 
-.navbar .container .zoom {
+.home-link {
+  text-decoration: none;
+  color: #707070;
+}
+
+.navbar .container .home-link .zoom {
   font-size: 30px;
+  text-decoration: none;
 }
 
 .navbar .container .navigation input {
@@ -170,11 +180,12 @@ footer
   margin: auto 0 auto 355px;
 }
 
-.searchbar .container .search img {
+.searchbar .container .search form img {
   width: 25px;
+  height: 20px;
   position: relative;
   margin: auto;
-  right: 185px;
+  right: 50px;
 }
 
 .searchbar .container .search input {
@@ -206,10 +217,10 @@ footer
   list-style-type: none;
 }
 
-.library .grid-container ul li img {
+/* .library .grid-container ul li img {
   width: 350px;
   height: 234px;
-}
+} */
 
 /***************************************************************************************************
 search.html 
@@ -255,8 +266,9 @@ search.html
   left: 25px;
 }
 
-.result .container .search .search-inner img {
+.result .container .search .search-inner form img {
   width: 20px;
+  height: 20px;
   position: relative;
   right: 65px;
 }
@@ -424,7 +436,7 @@ preview.html
 #preview .sm-fig .figure2 .image .portrait {
   width: 290px;
   position: relative;
-  top: 10%;
+  bottom: 10%;
   z-index: 1;
 }
 
@@ -432,7 +444,7 @@ preview.html
   width: 276px;
   height: 100%;
   position: relative;
-  bottom: 192px;
+  bottom: 240px;
   left: 7px;
 }
 
@@ -447,7 +459,7 @@ preview.html
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  margin: 0px 45px 15px;
+  margin: 15px 45px 5px;
   width: 255px;
   height: 45px;
 }

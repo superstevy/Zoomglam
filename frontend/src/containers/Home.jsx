@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import ImgSearch from "../assets/img/icons8-search-500.svg";
-import { getImages } from "../reducks/images/selectors.js";
-import { getHasNext } from "../reducks/images/selectors.js";
+
+import { getImages, getHasNext } from "../reducks/images/selectors.js";
 import { fetchImages } from "../reducks/images/operations";
+
 import Preview from "../components/Common/Preview";
 
 export default function Home() {
@@ -46,8 +47,10 @@ export default function Home() {
               </p>
             </div>
             <div className="search">
-              <input type="search" placeholder="Type here..." />
-              <img src={ImgSearch} alt="search icon" />
+              <form action="/search" method="get">
+                <input type="text" name="search" placeholder="Type here..." />
+                <img src={ImgSearch} alt="search icon" />
+              </form>
             </div>
           </div>
         </section>
@@ -56,21 +59,22 @@ export default function Home() {
       <div className="library">
         <section className="grid-container">
           <ul>
-            {images["results"] &&
-              images["results"].map((image) => (
+            {images &&
+              images.map((image) => (
                 <li key={image.id} onClick={() => clickImage(image.id)}>
                   <img src={image.image} alt={image.name} />
                 </li>
               ))}
-            {hasNext && (
-              <input
-                className="show-more"
-                type="submit"
-                value="Show more"
-                onClick={clickShowMore}
-              />
-            )}
           </ul>
+          {hasNext && (
+            <input
+              className="show-more"
+              type="submit"
+              value="Show more"
+              onClick={clickShowMore}
+            />
+          )}
+
           <hr />
         </section>
       </div>

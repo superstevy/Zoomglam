@@ -1,63 +1,94 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import queryString from "query-string";
 
-import ImgSearch from '../assets/img/icons8-search-500.svg'
-import Img1 from '../assets/img/kate-sade-2zZp12ChxhU-unsplash.png'
-import Img2 from '../assets/img/s-o-c-i-a-l-c-u-t-1RT4txDDAbM-unsplash.png'
-import Img3 from '../assets/img/nastuh-abootalebi-rSpMla5RItA-unsplash.png'
-import Img4 from '../assets/img/s-o-c-i-a-l-c-u-t-EwQhB-1.png'
-import Img5 from '../assets/img/nastuh-abootalebi-eHD-1.png'
-import Img6 from '../assets/img/copernico-p_kICQCOM-1.png'
-import Img7 from '../assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.png'
-import Img8 from '../assets/img/israel-andrade-YI_-1.png'
-import Img9 from '../assets/img/mario-gogh-VBLHICVh-lI-unsplash.png'
-import Img10 from '../assets/img/laura-davidson-QBAH4IldaZY-unsplash.png'
-import Img11 from '../assets/img/samantha-gades-BlIhVfXbi9s-unsplash.png'
-import Img12 from '../assets/img/alesia-kazantceva-VWcPlbHglYc-unsplash.png'
+import ImgSearch from "../assets/img/icons8-search-500.svg";
 
-export default function Search () {
+import { getImages, getHasNext } from "../reducks/images/selectors.js";
+import { fetchImages } from "../reducks/images/operations";
+
+import Preview from "../components/Common/Preview";
+
+export default function Search() {
+  const parsed = queryString.parse(window.location.search);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const images = getImages(selector);
+  const hasNext = getHasNext(selector);
+  const [imagePreview, setImagePreview] = useState(false);
+  const [imageId, setImageId] = useState(null);
+
+  const [search, setSearch] = useState(null);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    if (parsed.page !== undefined) {
+      setPage(parsed.page);
+    }
+    if (parsed.search !== undefined) {
+      setSearch(parsed.search);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (search) {
+      dispatch(fetchImages(page, search));
+    }
+  }, [page, search]);
+
+  const clickImage = (imageId) => {
+    setImageId(imageId);
+    setImagePreview(true);
+  };
+
+  const clickShowMore = () => {
+    if (page) {
+      setPage(page + 1);
+    }
+  };
+
   return (
     <div>
+      {imagePreview && (
+        <Preview setImageId={imageId} setImagePreview={setImagePreview} />
+      )}
 
-      <div className='result'>
-        <div className='container'>
-          <div className='search'>
-            <div className='search-inner'>
-              <input type='search' value='Office space' />
-              <img src={ImgSearch} alt='' />
+      <div className="result">
+        <div className="container">
+          <div className="search">
+            <div className="search-inner">
+              <form action="/search" method="get">
+                <input type="text" name="search" placeholder={search} />
+                <img src={ImgSearch} alt="" />
+              </form>
             </div>
           </div>
-          <div className='search-office'>
-            <p>Search <b>"Office space"</b></p>
+          <div className="search-office">
+            <p>
+              Search <b>"{search}"</b>
+            </p>
           </div>
         </div>
-        <main className='grid-container'>
+        <main className="grid-container">
           <ul>
-            <li><img src={Img1} alt='#' /></li>
-            <li><img src={Img2} alt='#' /></li>
-            <li><img src={Img3} alt='#' /></li>
-            <li><img src={Img4} alt='#' /></li>
-            <li><img src={Img5} alt='#' /></li>
-            <li><img src={Img6} alt='#' /></li>
-            <li><img src={Img7} alt='#' /></li>
-            <li><img src={Img8} alt='#' /></li>
-            <li><img src={Img9} alt='#' /></li>
-            <li><img src={Img10} alt='#' /></li>
-            <li><img src={Img11} alt='#' /></li>
-            <li><img src={Img12} alt='#' /></li>
-            <li><img src={Img4} alt='#' /></li>
-            <li><img src={Img5} alt='#' /></li>
-            <li><img src={Img6} alt='#' /></li>
-            <li><img src={Img1} alt='#' /></li>
-            <li><img src={Img2} alt='#' /></li>
-            <li><img src={Img3} alt='#' /></li>
-            <li><img src={Img7} alt='#' /></li>
-            <li><img src={Img8} alt='#' /></li>
-            <li><img src={Img9} alt='#' /></li>
+            {images.map((image) => (
+              <li key={image.id} onClick={() => clickImage(image.id)}>
+                <img src={image.image} alt={image.name} />
+              </li>
+            ))}
           </ul>
+          {hasNext && (
+            <input
+              className="show-more"
+              type="submit"
+              value="Show more"
+              onClick={clickShowMore}
+            />
+          )}
+
+          <hr />
         </main>
-
       </div>
-
     </div>
-  )
+  );
 }
