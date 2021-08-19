@@ -1,16 +1,14 @@
 This is an app that allow the user to select and download a variety of images to use as background for different zoom meetings.
-Backend link: https://zoomglam-backend.herokuapp.com/images/
-Frontend link: https://zoomglam-frontend.herokuapp.com/
 
-# Forum App in React & Redux + Django
+# Zoom background App in React & Redux + Django
 
 ```
-Forum App, with a frontend built in React & Redux and a backend built in Django API.
+Zoom background App, with a frontend built in React & Redux and a backend built in Django API.
 ```
 
-Check out [FRONTEND LIVE DEMO](https://forum-prod-frontend.herokuapp.com/) here!!
+Check out [FRONTEND](https://zoomglam-frontend.herokuapp.com/) here!!
 
-Check out [API LIVE DEMO](https://forum-prod-api.herokuapp.com/) here!!
+Check out [BACKEND APIs](https://zoomglam-backend.herokuapp.com/) here!!
 
 ## Tech used
 
@@ -24,7 +22,7 @@ Check out [API LIVE DEMO](https://forum-prod-api.herokuapp.com/) here!!
 1. Git Clone
 
 ```
-git clone git@github.com:Tech-i-s/techis-wd-forum-django-react.git
+git clone https://github.com/superstevy/Zoomglam.git
 ```
 
 2. Backend setting
@@ -38,7 +36,7 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-# Open http://127.0.0.1:8000/posts/
+# Open http://localhost:8000/images/
 ```
 
 3. Frontend setting
