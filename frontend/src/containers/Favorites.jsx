@@ -1,57 +1,55 @@
-import React from 'react'
+import React from "react";
 
-import ImgSearch from '../assets/img/icons8-search-500.svg'
-import Img1 from '../assets/img/samantha-gades-BlIhVfXbi9s-unsplash.png'
-import Img2 from '../assets/img/nastuh-abootalebi-eHD-1.png'
-import Img3 from '../assets/img/laura-davidson-QBAH4IldaZY-unsplash.png'
-import Img4 from '../assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.png'
+import ImgSearch from "../assets/img/icons8-search-500.svg";
+import Img1 from "../assets/img/samantha-gades-BlIhVfXbi9s-unsplash.png";
+import Img2 from "../assets/img/nastuh-abootalebi-eHD-1.png";
+import Img3 from "../assets/img/laura-davidson-QBAH4IldaZY-unsplash.png";
+import Img4 from "../assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.png";
 
-export default function Favorites () {
+export default function Favorites() {
   return (
-    <div id='favorite'>
-
-      <div className='favorite'>
-        <div className='container'>
-          <div className='search'>
-            <div className='search-inner'>
-              <input type='search' value='Office space' />
-              <img src={ImgSearch} alt='' />
+    <div id="favorite">
+      <div className="favorite">
+        <div className="container">
+          <div className="search">
+            <div className="search-inner">
+              <input type="text" placeholder="Office space" />
+              <img src={ImgSearch} alt="" />
             </div>
           </div>
-          <div className='title'>
+          <div className="title">
             <p>Favorites</p>
           </div>
         </div>
-        <main className='grid-container'>
+        <main className="grid-container">
           <ul>
             <li>
-              <img src={Img1} alt='#' />
-              <input type='submit' value='-' className='mobile' />
-              <input type='submit' value='Remove' className='remove' />
-              <input type='submit' value='Download' className='download' />
+              <img src={Img1} alt="#" />
+              <input type="submit" value="-" className="mobile" />
+              <input type="submit" value="Remove" className="remove" />
+              <input type="submit" value="Download" className="download" />
             </li>
             <li>
-              <img src={Img2} alt='#' />
-              <input type='submit' value='-' className='mobile' />
-              <input type='submit' value='Remove' className='remove' />
-              <input type='submit' value='Download' className='download' />
+              <img src={Img2} alt="#" />
+              <input type="submit" value="-" className="mobile" />
+              <input type="submit" value="Remove" className="remove" />
+              <input type="submit" value="Download" className="download" />
             </li>
             <li>
-              <img src={Img3} alt='#' />
-              <input type='submit' value='-' className='mobile' />
-              <input type='submit' value='Remove' className='remove' />
-              <input type='submit' value='Download' className='download' />
+              <img src={Img3} alt="#" />
+              <input type="submit" value="-" className="mobile" />
+              <input type="submit" value="Remove" className="remove" />
+              <input type="submit" value="Download" className="download" />
             </li>
             <li>
-              <img src={Img4} alt='#' />
-              <input type='submit' value='-' className='mobile' />
-              <input type='submit' value='Remove' className='remove' />
-              <input type='submit' value='Download' className='download' />
+              <img src={Img4} alt="#" />
+              <input type="submit" value="-" className="mobile" />
+              <input type="submit" value="Remove" className="remove" />
+              <input type="submit" value="Download" className="download" />
             </li>
           </ul>
         </main>
-
       </div>
     </div>
-  )
+  );
 }
