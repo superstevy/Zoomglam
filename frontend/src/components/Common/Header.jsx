@@ -26,7 +26,9 @@ export default function Header() {
 
             <nav className="navigation">
               <hr />
-              <input type="button" value="Favorites" />
+              <a href="/favorites" className="favorite-link">
+                <input type="button" value="Favorites" />
+              </a>
             </nav>
           </div>
           <div className="tags">
