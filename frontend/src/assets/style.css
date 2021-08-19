@@ -87,7 +87,7 @@ footer
   font-size: 30px;
 }
 
-.navbar .container .navigation input {
+.navbar .container .navigation .favorite-link input {
   margin-left: 50px;
   text-decoration: none;
   color: #707070;
@@ -98,11 +98,11 @@ footer
   font-size: 19px;
 }
 
-.navbar .container .navigation input:hover {
+.navbar .container .navigation .favorite-link input:hover {
   background-color: rgba(97, 97, 97, 0.364);
 }
 
-.navbar .container .navigation input:active {
+.navbar .container .navigation .favorite-link input:active {
   color: #000000f7;
 }
 
@@ -504,6 +504,7 @@ favorite.html
 
 .favorite .container .search .search-inner img {
   width: 20px;
+  height: 2em;
   position: relative;
   right: 65px;
 }
@@ -545,6 +546,7 @@ favorite.html
 
 .favorite .grid-container ul li img {
   width: 100%;
+  height: 100%;
 }
 
 .favorite .grid-container ul li input {
