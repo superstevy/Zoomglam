@@ -216,27 +216,33 @@ footer
   list-style-type: none;
 }
 
-/* .library .grid-container ul li img {
-  width: 350px;
-  height: 234px;
+/* .library .grid-container ul li {
+  position: relative;
 } */
+
+.fav-icon {
+  width: auto;
+  height: 40px;
+  position: absolute;
+  /* top: 45px; */
+}
 
 /***************************************************************************************************
 search.html 
 *****************************************************************************************************/
 
-/**********
-.header 
-****************************************************************************************************/
+/*
+            .header 
+            ****************************************************************************************************/
 
 .header {
   background-color: white;
   margin: 0 auto;
 }
 
-/***********
-.result 
-***************************************************************************************************/
+/*
+            .result 
+            ***************************************************************************************************/
 
 .result {
   background-color: white;
@@ -381,6 +387,16 @@ preview.html
 #preview .figure1 .image .figure-img {
   width: 100%;
   height: 40em;
+}
+
+#preview .figure1 .image .fav-icon {
+  height: 0;
+  top: 0;
+}
+
+#preview .figure1 .image .fav-icon img {
+  width: 85%;
+  height: auto;
 }
 
 #preview .figure1 .caption {
@@ -530,59 +546,64 @@ favorite.html
   color: #262626;
 }
 
-.favorite .grid-container ul {
+.favorite .fav-list {
   margin: auto 12%;
   padding: 10px 30px;
-  list-style-type: none;
 }
 
-.favorite .grid-container ul li {
+.fav-img {
   margin: 55px auto;
 }
 
-.favorite .grid-container ul li .mobile {
+.fav-img img {
+  margin-top: 6em;
+  margin-bottom: -2em;
+  width: 900px;
+  height: 600px;
+}
+
+.mobile {
   display: none;
 }
 
-.favorite .grid-container ul li img {
-  width: 100%;
-  height: 100%;
+.fav-btn {
+  margin: 0em 1em 7em;
 }
 
-.favorite .grid-container ul li input {
+.fav-btn input {
   float: right;
   font-size: 20px;
   border-radius: 5px;
   height: 45px;
 }
 
-.favorite .grid-container ul li .download {
+.fav-btn .download-btn {
   background-color: #484646;
   color: white;
-  margin: 20px 20px 70px;
+  /* margin: 0px 20px 60px; */
   width: 255px;
   border: none;
 }
 
-.favorite .grid-container ul li .download:hover {
+.fav-btn .download-btn:hover {
   box-shadow: 0px 0px 30px 7px #00000070;
 }
 
-.favorite .grid-container ul li .download:active {
+.fav-btn .download-btn:active {
   background-color: #48464680;
 }
 
-.favorite .grid-container ul li .remove {
-  margin: 20px 20px 70px;
+.fav-btn .remove-btn {
+  margin: 0px 20px 0px;
   width: 210px;
   border: 1px solid rgb(112 112 112);
 }
 
-.favorite .grid-container ul li .remove:hover {
+.fav-btn .remove-btn:hover {
   box-shadow: 0px 0px 30px 7px #00000047;
 }
 
-.favorite .grid-container ul li .remove:active {
+.fav-btn .remove-btn:active {
   background-color: #2601015f;
 }
 
@@ -621,19 +642,10 @@ Mobile device
     background-color: white;
   }
 
-  /* header {
-      height: 1900px;
-      background-position: -819px;
-  } */
-
   .homeHeader {
     height: 1900px;
     background-position: -819px;
   }
-
-  /* .navbar {
-      width: 1200px;
-  } */
 
   .navbar .container {
     margin-bottom: 30px;
@@ -754,8 +766,8 @@ Mobile device
   ***************************************************************************************************/
 
   /*
-  class = 'preview'
-  *******************************************************************/
+              class = 'preview'
+              *******************************************************************/
 
   .preview,
   .preview .result {
@@ -764,8 +776,8 @@ Mobile device
   }
 
   /*
-  id = 'preview'
-  *********************************************************************/
+                id = 'preview'
+                *********************************************************************/
 
   #preview {
     margin: auto;
@@ -817,8 +829,8 @@ Mobile device
   ********************************************************************************************************/
 
   /*
-  id = favorite
-  *****************************************************************/
+              id = favorite
+              *****************************************************************/
 
   #favorite {
     width: 1206px;
@@ -829,8 +841,8 @@ Mobile device
   }
 
   /*
-  class = favorite
-  ******************************************************************/
+              class = favorite
+              ******************************************************************/
 
   .favorite .grid-container ul {
     margin: auto 4%;

@@ -9,6 +9,7 @@ import thunk from "redux-thunk";
 
 import { ImagesReducer } from "../images/reducers";
 import { TagsReducer } from "../tags/reducers";
+import { FavoritesReducer } from "../favorites/reducers";
 
 export default function createStore(history) {
   return reduxCreateStore(
@@ -16,6 +17,7 @@ export default function createStore(history) {
       router: connectRouter(history),
       images: ImagesReducer,
       tags: TagsReducer,
+      favorites: FavoritesReducer,
     }),
     compose(
       applyMiddleware(routerMiddleware(history), thunk),
