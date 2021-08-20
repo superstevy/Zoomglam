@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import ImgSearch from "../assets/img/icons8-search-500.svg";
+import favIcon from "../assets/img/Group 97.png";
 
 import { getImages, getHasNext } from "../reducks/images/selectors.js";
+import { getFavorites } from "../reducks/favorites/selectors";
+
 import { fetchImages } from "../reducks/images/operations";
+import {
+  addFavorite,
+  fetchLocalStorage,
+} from "../reducks/favorites/operations";
 
 import Preview from "../components/Common/Preview";
 
@@ -12,12 +19,14 @@ export default function Home() {
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
   const images = getImages(selector);
+  const hasNext = getHasNext(selector);
+  const favorites = getFavorites(selector);
   const [imagePreview, setImagePreview] = useState(false);
   const [imageId, setImageId] = useState(null);
-  const hasNext = getHasNext(selector);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    dispatch(fetchLocalStorage());
     dispatch(fetchImages(page));
     setPage(page + 1);
   }, []);
@@ -25,6 +34,10 @@ export default function Home() {
   const clickImage = (imageId) => {
     setImageId(imageId);
     setImagePreview(true);
+  };
+
+  const clickFavorite = (image) => {
+    dispatch(addFavorite(image));
   };
 
   const clickShowMore = () => {
@@ -59,12 +72,25 @@ export default function Home() {
       <div className="library">
         <section className="grid-container">
           <ul>
-            {images &&
-              images.map((image) => (
-                <li key={image.id} onClick={() => clickImage(image.id)}>
-                  <img src={image.image} alt={image.name} />
-                </li>
-              ))}
+            {images.map((image) => (
+              <li key={image.id}>
+                {favorites.filter(
+                  (favoriteImage) => image.id === favoriteImage.id
+                ).length === 0 && (
+                  <img
+                    className="fav-icon"
+                    src={favIcon}
+                    alt="favIcon"
+                    onClick={() => clickFavorite(image)}
+                  />
+                )}
+                <img
+                  src={image.image}
+                  alt={image.description}
+                  onClick={() => clickImage(image.id)}
+                />
+              </li>
+            ))}
           </ul>
           {hasNext && (
             <input

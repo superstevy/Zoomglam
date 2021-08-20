@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ellipseIcon from "../../assets/img/Ellipse 2.svg";
 import xIcon from "../../assets/img/×.svg";
 import portrait from "../../assets/img/woman110.png";
+import favIcon from "../../assets/img/Group 97.png";
 
 import API from "../../API";
 
@@ -39,7 +40,14 @@ export default function Preview({ setImageId, setImagePreview }) {
         </div>
         <div className="figure1">
           <div className="image">
-            <img src={image.image} className="figure-img" alt="..." />
+            <div className="fav-icon">
+              <img src={favIcon} alt="favIcon" />
+            </div>
+            <img
+              src={image.image}
+              className="figure-img"
+              alt={image.description}
+            />
           </div>
           <div className="caption">
             <div className="figure-caption">
@@ -53,7 +61,11 @@ export default function Preview({ setImageId, setImagePreview }) {
           <div className="figure2">
             <div className="image">
               <img src={portrait} className="portrait" alt="..." />
-              <img src={image.image} className="back-img" alt="..." />
+              <img
+                src={image.image}
+                className="back-img"
+                alt={image.description}
+              />
             </div>
             <div className="caption">
               <input type="submit" value="Download" />

@@ -216,6 +216,13 @@ footer
   list-style-type: none;
 }
 
+.fav-icon {
+  width: auto;
+  height: auto;
+  position: relative;
+  top: 70px;
+}
+
 /***************************************************************************************************
 search.html 
 *****************************************************************************************************/
@@ -378,6 +385,16 @@ preview.html
   height: 40em;
 }
 
+#preview .figure1 .image .fav-icon {
+  height: 0;
+  top: 0;
+}
+
+#preview .figure1 .image .fav-icon img {
+  width: 10%;
+  height: auto;
+}
+
 #preview .figure1 .caption {
   color: gray;
   overflow: hidden;
@@ -525,33 +542,32 @@ favorite.html
   color: #262626;
 }
 
-.favorite .grid-container ul {
+.favorite .fav-list {
   margin: auto 12%;
   padding: 10px 30px;
-  list-style-type: none;
 }
 
-.favorite .grid-container ul li {
+.fav-img {
   margin: 55px auto;
 }
 
-.favorite .grid-container ul li .mobile {
-  display: none;
-}
-
-.favorite .grid-container ul li img {
+.fav-img img {
   width: 100%;
   height: 100%;
 }
 
-.favorite .grid-container ul li input {
+.mobile {
+  display: none;
+}
+
+.fav-btn input {
   float: right;
   font-size: 20px;
   border-radius: 5px;
   height: 45px;
 }
 
-.favorite .grid-container ul li .download {
+.fav-btn .download-btn {
   background-color: #484646;
   color: white;
   margin: 20px 20px 70px;
@@ -559,25 +575,25 @@ favorite.html
   border: none;
 }
 
-.favorite .grid-container ul li .download:hover {
+.fav-btn .download-btn:hover {
   box-shadow: 0px 0px 30px 7px #00000070;
 }
 
-.favorite .grid-container ul li .download:active {
+.fav-btn .download-btn:active {
   background-color: #48464680;
 }
 
-.favorite .grid-container ul li .remove {
+.fav-btn .remove-btn {
   margin: 20px 20px 70px;
   width: 210px;
   border: 1px solid rgb(112 112 112);
 }
 
-.favorite .grid-container ul li .remove:hover {
+.fav-btn .remove-btn:hover {
   box-shadow: 0px 0px 30px 7px #00000047;
 }
 
-.favorite .grid-container ul li .remove:active {
+.fav-btn .remove-btn:active {
   background-color: #2601015f;
 }
 
