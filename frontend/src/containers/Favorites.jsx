@@ -25,8 +25,10 @@ export default function Favorites() {
         <div className="container">
           <div className="search">
             <div className="search-inner">
-              <input type="text" />
-              <img src={ImgSearch} alt="" />
+              <form action="/search" method="get">
+                <input type="text" name="search" placeholder="Type here..." />
+                <img src={ImgSearch} alt="search icon" />
+              </form>
             </div>
           </div>
           <div className="title">

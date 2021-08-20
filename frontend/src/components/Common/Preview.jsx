@@ -61,7 +61,6 @@ export default function Preview({ setImageId, setImagePreview }) {
                 (favoriteImage) => image.id === favoriteImage.id
               ).length === 0 && (
                 <img
-                  // className="fav-icon"
                   src={favIcon}
                   alt="favIcon"
                   onClick={() => clickFavorite(image)}
