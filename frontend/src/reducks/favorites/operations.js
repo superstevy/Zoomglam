@@ -12,7 +12,7 @@ const setToLocalStorage = (favorites) => {
 export const fetchLocalStorage = () => {
   return async (dispatch) => {
     let favoritesJSON = localStorage.getItem(FAVORITES_KEY);
-    let favorites = {};
+    let favorites = [];
     if (favoritesJSON) {
       favorites = JSON.parse(favoritesJSON);
     }
