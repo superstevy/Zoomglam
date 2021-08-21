@@ -7,12 +7,14 @@ import favIcon from "../assets/img/Group 97.png";
 
 import { getImages, getHasNext } from "../reducks/images/selectors.js";
 import { getFavorites } from "../reducks/favorites/selectors";
+import { getTags } from "../reducks/tags/selectors.js";
 
 import { fetchImages } from "../reducks/images/operations";
 import {
   addFavorite,
   fetchLocalStorage,
 } from "../reducks/favorites/operations";
+import { fetchTags } from "../reducks/tags/operations";
 
 import Preview from "../components/Common/Preview";
 
@@ -24,6 +26,7 @@ export default function Search() {
   const images = getImages(selector);
   const hasNext = getHasNext(selector);
   const favorites = getFavorites(selector);
+  const tags = getTags(selector);
 
   const [imagePreview, setImagePreview] = useState(false);
   const [imageId, setImageId] = useState(null);
@@ -42,6 +45,10 @@ export default function Search() {
     if (parsed.tag_id !== undefined) {
       setTagId(parsed.tag_id);
     }
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchTags());
   }, []);
 
   useEffect(() => {
@@ -85,9 +92,7 @@ export default function Search() {
             </div>
           </div>
           <div className="search-office">
-            <p>
-              Search <b>"{search}"</b>
-            </p>
+            <p>Search {tagId ? <b>"tag name here"</b> : <b>"{search}"</b>}</p>
           </div>
         </div>
         <main className="grid-container">
