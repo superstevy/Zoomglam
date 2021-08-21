@@ -181,10 +181,11 @@ footer
 
 .searchbar .container .search form img {
   width: 25px;
-  height: 20px;
+  height: 25px;
   position: relative;
+  top: 5px;
   margin: auto;
-  right: 50px;
+  right: 40px;
 }
 
 .searchbar .container .search input {
@@ -275,7 +276,8 @@ search.html
   width: 20px;
   height: 20px;
   position: relative;
-  right: 65px;
+  top: 5px;
+  right: 50px;
 }
 
 .result .container .search .search-inner input {
@@ -518,14 +520,15 @@ favorite.html
   left: 25px;
 }
 
-.favorite .container .search .search-inner img {
+.favorite .container .search .search-inner form img {
   width: 20px;
   height: 2em;
   position: relative;
-  right: 65px;
+  top: 10px;
+  right: 50px;
 }
 
-.favorite .container .search .search-inner input {
+.favorite .container .search .search-inner form input {
   margin-right: 20px;
   font-size: 16px;
   border: 1px solid rgb(216, 216, 216);
