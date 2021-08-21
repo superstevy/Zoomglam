@@ -3,9 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 
 import ImgSearch from "../assets/img/icons8-search-500.svg";
+import favIcon from "../assets/img/Group 97.png";
 
 import { getImages, getHasNext } from "../reducks/images/selectors.js";
+import { getFavorites } from "../reducks/favorites/selectors";
+
 import { fetchImages } from "../reducks/images/operations";
+import {
+  addFavorite,
+  fetchLocalStorage,
+} from "../reducks/favorites/operations";
 
 import Preview from "../components/Common/Preview";
 
@@ -15,6 +22,7 @@ export default function Search() {
   const selector = useSelector((state) => state);
   const images = getImages(selector);
   const hasNext = getHasNext(selector);
+  const favorites = getFavorites(selector);
   const [imagePreview, setImagePreview] = useState(false);
   const [imageId, setImageId] = useState(null);
 
@@ -22,6 +30,7 @@ export default function Search() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    dispatch(fetchLocalStorage());
     if (parsed.page !== undefined) {
       setPage(parsed.page);
     }
@@ -39,6 +48,10 @@ export default function Search() {
   const clickImage = (imageId) => {
     setImageId(imageId);
     setImagePreview(true);
+  };
+
+  const clickFavorite = (image) => {
+    dispatch(addFavorite(image));
   };
 
   const clickShowMore = () => {
@@ -72,8 +85,22 @@ export default function Search() {
         <main className="grid-container">
           <ul>
             {images.map((image) => (
-              <li key={image.id} onClick={() => clickImage(image.id)}>
-                <img src={image.image} alt={image.name} />
+              <li key={image.id}>
+                {favorites.filter(
+                  (favoriteImage) => image.id === favoriteImage.id
+                ).length === 0 && (
+                  <img
+                    className="fav-icon"
+                    src={favIcon}
+                    alt="favIcon"
+                    onClick={() => clickFavorite(image)}
+                  />
+                )}
+                <img
+                  src={image.image}
+                  alt={image.name}
+                  onClick={() => clickImage(image.id)}
+                />
               </li>
             ))}
           </ul>
