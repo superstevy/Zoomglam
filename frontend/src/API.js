@@ -18,8 +18,11 @@ const api = axios.create({
 });
 
 export default class API {
-  getImages = async (page, search) => {
+  getImages = async (page, search, tagId) => {
     let url = `/images/?page=${page}`;
+    if (tagId) {
+      url += "&tags=" + tagId;
+    }
     if (search) {
       url += "&search=" + search;
     }

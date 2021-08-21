@@ -35,7 +35,9 @@ export default function Header() {
             <nav>
               {tags["results"] &&
                 tags["results"].map((tag) => (
-                  <input type="submit" key={tag.id} value={tag.name} />
+                  <a href={`/search?tag_id=${tag.id}`}>
+                    <input type="submit" key={tag.id} value={tag.name} />
+                  </a>
                 ))}
             </nav>
           </div>
