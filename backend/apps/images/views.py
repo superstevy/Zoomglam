@@ -1,8 +1,8 @@
 from rest_framework import generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .serializers import *
-from django.http import JsonResponse
 from .models import *
+from .paginations import NoLimitResultPagination
 
 
 class ImageList(generics.ListAPIView):
@@ -18,6 +18,7 @@ class TagList(generics.ListAPIView):
     # Get all tags
     queryset = Tag.objects.order_by('created_at')
     serializer_class = TagSerializer
+    pagination_class = NoLimitResultPagination
 
 
 class ImageDetail(generics.RetrieveAPIView, generics.UpdateAPIView):
