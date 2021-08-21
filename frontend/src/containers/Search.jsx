@@ -20,14 +20,16 @@ export default function Search() {
   const parsed = queryString.parse(window.location.search);
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
+
   const images = getImages(selector);
   const hasNext = getHasNext(selector);
   const favorites = getFavorites(selector);
+
   const [imagePreview, setImagePreview] = useState(false);
   const [imageId, setImageId] = useState(null);
-
   const [search, setSearch] = useState(null);
   const [page, setPage] = useState(1);
+  const [tagId, setTagId] = useState(null);
 
   useEffect(() => {
     dispatch(fetchLocalStorage());
@@ -37,13 +39,19 @@ export default function Search() {
     if (parsed.search !== undefined) {
       setSearch(parsed.search);
     }
+    if (parsed.tag_id !== undefined) {
+      setTagId(parsed.tag_id);
+    }
   }, []);
 
   useEffect(() => {
     if (search) {
-      dispatch(fetchImages(page, search));
+      dispatch(fetchImages(page, search, null));
     }
-  }, [page, search]);
+    if (tagId) {
+      dispatch(fetchImages(page, null, tagId));
+    }
+  }, [page, search, tagId]);
 
   const clickImage = (imageId) => {
     setImageId(imageId);
