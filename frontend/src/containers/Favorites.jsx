@@ -44,7 +44,12 @@ export default function Favorites() {
                   <img src={favorite.image} alt={favorite.description} />
                 </div>
                 <div className="fav-btn">
-                  <input type="submit" value="-" className="mobile" />
+                  <input
+                    type="submit"
+                    value="-"
+                    className="mobile"
+                    onClick={() => dispatch(deleteFavorite(favorite.id))}
+                  />
 
                   <input
                     type="submit"

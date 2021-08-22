@@ -655,21 +655,29 @@ Mobile device
     box-shadow: 0px 0px 20px 0px #808080;
   }
 
-  .navbar .container .zoom,
+  .home-link {
+    margin: auto 0;
+  }
+
+  .navbar .container .home-link .zoom,
   .navbar .container .navigation {
-    font-size: 80px;
     padding: 15px;
+    font-size: 40px;
   }
 
   .navbar .container .navigation hr {
     display: none;
   }
 
-  .navbar .container .navigation input {
+  .favorite-link input {
+    font-size: 50px;
+  }
+
+  .navbar .container .navigation .favorite-link input {
     border: 1px solid rgb(38 38 38);
     border-radius: 20px;
     padding: 10px 20px;
-    font-size: 80px;
+    font-size: 60px;
   }
 
   .navbar .tags {
@@ -720,9 +728,11 @@ Mobile device
     border-radius: 60px;
   }
 
-  .searchbar .container .search img {
-    width: 40px;
-    right: 195px;
+  .searchbar .container .search form img {
+    width: 60px;
+    height: 55px;
+    top: 10px;
+    right: 156px;
   }
 
   .library .grid-container ul {
@@ -734,8 +744,14 @@ Mobile device
     width: 500px;
   }
 
+  .library .grid-container ul li .fav-icon,
+  .result .grid-container ul li .fav-icon {
+    width: 6rem;
+    height: 5rem;
+  }
+
   /*
-  searched.html
+  Search.jsx
   *************************************************************************************************/
 
   .result .container .search-office {
@@ -757,7 +773,7 @@ Mobile device
   }
 
   .result .grid-container ul li img {
-    width: 100%;
+    width: 500px;
   }
 
   .result .container .search .search-inner {
@@ -797,6 +813,10 @@ Mobile device
     top: 35%;
     left: 0;
     box-shadow: none;
+  }
+
+  #preview .figure1 .image .fav-icon img {
+    width: 150%;
   }
 
   #preview .figure1 .caption {
@@ -852,10 +872,9 @@ Mobile device
     padding: 10px 0px;
   }
 
-  .favorite .grid-container ul li .mobile {
+  .mobile {
     display: inline;
     position: relative;
-    bottom: 36em;
     right: 1em;
     width: 70px;
     height: 50px;
@@ -865,8 +884,8 @@ Mobile device
     box-shadow: 0px 0px 20px 0px #808080;
   }
 
-  .favorite .grid-container ul li .download,
-  .favorite .grid-container ul li .remove {
+  .download-btn,
+  .remove-btn {
     display: none !important;
   }
 }

@@ -111,7 +111,7 @@ export default function Search() {
                 )}
                 <img
                   src={image.image}
-                  alt={image.name}
+                  alt={image.description}
                   onClick={() => clickImage(image.id)}
                 />
               </li>
