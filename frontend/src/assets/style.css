@@ -130,7 +130,7 @@ footer
   padding: 5px 10px;
 }
 
-.navbar .tags nav input {
+.navbar .tags nav a input {
   margin-left: 10px;
   color: #707070;
   background-color: rgba(128, 128, 128, 0.124);
@@ -140,11 +140,11 @@ footer
   font-size: 15px;
 }
 
-.navbar .tags nav input:hover {
+.navbar .tags nav a input:hover {
   box-shadow: 0px 0px 30px 7px #00000070;
 }
 
-.navbar .tags nav input:active {
+.navbar .tags nav a input:active {
   color: #000000f7;
 }
 
@@ -254,6 +254,7 @@ search.html
   margin: 0 auto;
   max-width: 1200px;
   padding: 20px 0px;
+  width: 75em;
 }
 
 .result .container {

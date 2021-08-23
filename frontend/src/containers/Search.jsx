@@ -92,7 +92,7 @@ export default function Search() {
             </div>
           </div>
           <div className="search-office">
-            <p>Search {tagId ? <b>"tag name here"</b> : <b>"{search}"</b>}</p>
+            <p>Search {tagId ? <b>"tag {tagId}"</b> : <b>"{search}"</b>}</p>
           </div>
         </div>
         <main className="grid-container">
