@@ -6,7 +6,7 @@ body {
   background-color: #94949458;
   font-family: Arial, Helvetica, sans-serif;
   margin: auto;
-  /* width: fit-content; */
+  width: 100%;
 }
 
 .homeHeader {
@@ -649,7 +649,13 @@ Mobile device
 
   .homeHeader {
     height: 1900px;
-    background-position: -819px;
+    background-position: -349px;
+    width: 75em;
+  }
+
+  .show-more {
+    margin: auto 23em;
+    width: 100%;
   }
 
   .navbar .container {
@@ -663,7 +669,7 @@ Mobile device
 
   .navbar .container .home-link .zoom,
   .navbar .container .navigation {
-    padding: 15px;
+    padding: 10px;
     font-size: 40px;
   }
 
@@ -691,7 +697,7 @@ Mobile device
     padding: 0;
   }
 
-  .navbar .tags nav input {
+  .navbar .tags nav a input {
     font-size: 38px;
     color: #000000c4;
     background-color: #d8d8d896;
@@ -862,16 +868,34 @@ Mobile device
   }
 
   #favorite .header {
-    width: 101%;
+    width: 100%;
   }
 
   /*
               class = favorite
               ******************************************************************/
 
+  .favorite .container .search {
+    top: 14em;
+  }
+
+  .favorite .container .title {
+    margin: 10% 9%;
+    top: 8em;
+  }
+
+  .favorite .fav-list {
+    margin: 0;
+    padding: 0;
+  }
+
   .favorite .grid-container ul {
     margin: auto 4%;
     padding: 10px 0px;
+  }
+
+  .fav-img {
+    margin: 60px 10em;
   }
 
   .mobile {
