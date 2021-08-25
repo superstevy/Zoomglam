@@ -3,8 +3,8 @@ from cloudinary.models import CloudinaryField
 
 
 class Tag(models.Model):
-    # class Meta(object):
-    #     db_table = 'tags'
+    class Meta(object):
+        db_table = 'tagsdb'
 
     name = models.CharField(
         max_length=50, unique=True, blank=False
@@ -21,8 +21,8 @@ class Tag(models.Model):
 
 
 class Image(models.Model):
-    # class Meta(object):
-    #     db_table = 'image'
+    class Meta(object):
+        db_table = 'imagedb'
 
     name = models.CharField(
         max_length=50
@@ -30,8 +30,8 @@ class Image(models.Model):
     description = models.CharField(
         max_length=500, blank=True
     )
-    image = CloudinaryField(
-        'image', blank=True, null=True
+    images = CloudinaryField(
+        'images', blank=True, null=True
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=True, auto_now_add=True
