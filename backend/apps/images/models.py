@@ -30,8 +30,8 @@ class Image(models.Model):
     description = models.CharField(
         max_length=500, blank=True
     )
-    images = CloudinaryField(
-        'images', blank=True, null=True
+    image = CloudinaryField(
+        'image', blank=True, null=True
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=True, auto_now_add=True
