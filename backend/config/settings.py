@@ -159,7 +159,6 @@ cloudinary.config(
     cloud_name="dxct8rh7c",
     api_key="211453584171844",
     api_secret="RJj5Er47QjQ33yDV_9Pig2NNnjs",
-    secure=True
 )
 
 REST_FRAMEWORK = {
