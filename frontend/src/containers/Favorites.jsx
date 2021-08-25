@@ -51,7 +51,11 @@ export default function Favorites() {
                     onClick={() => dispatch(deleteFavorite(favorite.id))}
                   />
 
-                  <a href={favorite.image} download={favorite.name}>
+                  <a
+                    href={favorite.image}
+                    download={favorite.name}
+                    target="_blank"
+                  >
                     <input
                       type="submit"
                       value="Download"

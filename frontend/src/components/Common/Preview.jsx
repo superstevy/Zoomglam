@@ -92,7 +92,7 @@ export default function Preview({ setImageId, setImagePreview }) {
               />
             </div>
             <div className="caption">
-              <a href={image.image} download={image.name}>
+              <a href={image.image} download={image.name} target="_blank">
                 <input type="submit" value="Download" />
               </a>
             </div>
