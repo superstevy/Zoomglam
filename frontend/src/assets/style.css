@@ -221,16 +221,6 @@ footer
   padding: 100px 0 5px 10px;
 }
 
-/* .library .grid-container ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px 30px;
-  margin: 10px auto;
-  width: 95%;
-  padding: 0;
-  list-style-type: none;
-} */
-
 .fav-icon {
   width: auto;
   height: 40px;
@@ -310,15 +300,6 @@ search.html
   line-height: 90px;
   color: #262626;
 }
-
-/* .result .grid-container ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px 30px;
-  padding: 0;
-  width: 95%;
-  list-style-type: none;
-} */
 
 .result .more {
   margin: auto 30px;
