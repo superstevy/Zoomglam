@@ -443,7 +443,6 @@ preview.html
 }
 
 #preview .sm-fig .figure2 .image .portrait {
-  width: 290px;
   height: 243px;
   position: relative;
   bottom: 10%;
@@ -451,11 +450,9 @@ preview.html
 }
 
 #preview .sm-fig .figure2 .image .back-img {
-  width: 276px;
   height: 100%;
   position: relative;
   bottom: 240px;
-  left: 7px;
 }
 
 #preview .sm-fig .figure2 .caption {
