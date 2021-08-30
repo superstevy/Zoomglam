@@ -55,9 +55,11 @@ export default function Home() {
         <section className="searchbar">
           <div className="container">
             <div className="instruct">
-              <p>
-                Find your zoom <span>background</span>
-              </p>
+              <div className="instruct-btn">
+                <p>
+                  Find your zoom <span>background</span>
+                </p>
+              </div>
             </div>
             <div className="search">
               <form action="/search" method="get">
@@ -92,14 +94,16 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          {hasNext && (
-            <input
-              className="show-more"
-              type="submit"
-              value="Show more"
-              onClick={clickShowMore}
-            />
-          )}
+          <div className="show-more-btn">
+            {hasNext && (
+              <input
+                className="show-more"
+                type="submit"
+                value="Show more"
+                onClick={clickShowMore}
+              />
+            )}
+          </div>
 
           <hr />
         </section>

@@ -13,8 +13,8 @@ body {
   background-image: url("./img/william-krause-U8Yn1zkefVs-unsplash.png");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  top: 80px;
+  /* position: relative;
+  top: 80px; */
 }
 
 img {
@@ -41,9 +41,13 @@ footer
   background-color: white;
 }
 
+.show-more-btn {
+  width: 100%;
+}
+
 .show-more {
   background-color: white;
-  margin: auto 41em;
+  margin: 0 40%;
   width: 20%;
   padding: 10px 30px;
   border: 1px solid gray;
@@ -177,21 +181,33 @@ footer
 
 .searchbar .container .instruct {
   text-align: center;
-  font-size: 50px;
   color: #ffffff;
-  margin: 8% 30% auto 27%;
+  margin-top: 10%;
+  width: 100%;
 }
 
-.searchbar .container .instruct p span {
-  margin: 3% 50% auto 23%;
+.searchbar .container .instruct .instruct-btn {
+  width: 100%;
+}
+
+.searchbar .container .instruct .instruct-btn p {
+  margin: auto;
+  font-size: 80px;
+}
+
+.searchbar .container .instruct .instruct-btn p span {
   display: block;
-  font-size: 85px;
+  font-size: 150px;
   color: #ffffff;
 }
 
 .searchbar .container .search {
   display: flex;
-  margin: auto 0 auto 35%;
+  width: 100%;
+}
+
+.searchbar .container .search form {
+  margin: 5% auto;
 }
 
 .searchbar .container .search form img {
@@ -712,12 +728,12 @@ Mobile device
   }
 
   .searchbar .container .instruct {
-    margin: 40% 25% auto 265px;
-    font-size: 70px;
+    margin-top: 25%;
+    /* font-size: 70px; */
   }
 
   .searchbar .container .instruct p span {
-    margin: 0% 82% auto -110px;
+    margin: auto;
     font-size: 155px;
   }
 
