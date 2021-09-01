@@ -658,10 +658,6 @@ Mobile device
     width: 79em;
   }
 
-  .navbar {
-    width: 79em;
-  }
-
   .navbar .container {
     margin-bottom: 30px;
     box-shadow: 0px 0px 20px 0px #808080;
@@ -719,6 +715,11 @@ Mobile device
 
   .show-more {
     width: 75%;
+  }
+
+  .more .zoom {
+    margin-top: 85px;
+    font-size: 30px;
   }
 
   /*
