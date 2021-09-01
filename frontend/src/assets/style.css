@@ -800,14 +800,23 @@ Mobile device
 
   .result .grid-container ul {
     grid-template-columns: auto auto;
+    margin: auto 20px;
   }
 
   .result .grid-container ul li img {
-    width: 500px;
+    width: 480px;
   }
 
   .result .container .search .search-inner {
     display: none;
+  }
+
+  .result .grid-container .show-more-btn {
+    margin: 15% 95% auto;
+  }
+
+  .result .grid-container .show-more-btn .show-more {
+    margin: 0;
   }
 
   .result .grid-container hr {
