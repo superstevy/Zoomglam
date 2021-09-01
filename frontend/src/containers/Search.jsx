@@ -125,14 +125,16 @@ export default function Search() {
               </li>
             ))}
           </ul>
-          {hasNext && (
-            <input
-              className="show-more"
-              type="submit"
-              value="Show more"
-              onClick={clickShowMore}
-            />
-          )}
+          <div className="show-more-btn">
+            {hasNext && (
+              <input
+                className="show-more"
+                type="submit"
+                value="Show more"
+                onClick={clickShowMore}
+              />
+            )}
+          </div>
 
           <hr />
         </main>
