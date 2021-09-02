@@ -56,8 +56,9 @@ export default function Home() {
           <div className="container">
             <div className="instruct">
               <div className="instruct-btn">
+                <p>Find your zoom</p>
                 <p>
-                  Find your zoom <span>background</span>
+                  <span>background</span>
                 </p>
               </div>
             </div>

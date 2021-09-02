@@ -93,9 +93,7 @@ export default function Search() {
           </div>
           <div className="search-office">
             {tagId ? (
-              <p>
-                <b>Tag "{tagId}"</b>
-              </p>
+              <p>{/* <b>Tag "{tagId}"</b> */}</p>
             ) : (
               <p>
                 Search <b>"{search}"</b>{" "}
