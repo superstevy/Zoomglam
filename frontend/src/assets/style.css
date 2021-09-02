@@ -851,9 +851,9 @@ Mobile device
   }
 
   #preview .figure1 {
-    max-width: 100%;
-    top: 35%;
-    left: 0;
+    width: 90%;
+    top: 30%;
+    left: 5%;
     box-shadow: none;
   }
 
@@ -877,10 +877,9 @@ Mobile device
   #preview .sm-fig {
     background-color: rgb(255 255 255 / 0%);
     bottom: 0;
-    left: 0;
+    left: 50%;
     box-shadow: none;
-    float: right;
-    top: 36%;
+    top: 31%;
   }
 
   #preview .sm-fig .figure2 .caption input {
